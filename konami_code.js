@@ -5,7 +5,7 @@ var index = 0;
 // const wnd = document.querySelector('window');
 
 window.addEventListener('keydown', function() {
-  init(x);
+  init();
 });
 
 function init(x) {

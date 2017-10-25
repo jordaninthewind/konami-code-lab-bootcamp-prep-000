@@ -4,20 +4,24 @@ var index = 0;
 
 // const wnd = document.querySelector('window');
 
-window.addEventListener('keydown', function() {
-  init();
-});
 
-function init(x) {
-  let key = parseInt(x.which || x.detail);
 
-  if (key === code[index]) {
-    index++;
-      if (index === code.length) {
-        alert("Hurray!");
+function init() {
+
+  document.body.on("keydown", function(e) {
+
+    let key = parseInt(e.detail || e.which);
+
+    if (key === code[index]) {
+      index++;
+        if (index === code.length) {
+          alert("Hurray!");
+          index = 0;
+        }
+      } else {
         index = 0;
-      }
-    } else {
-      index = 0;
+    }
   }
+  })
 }
+
